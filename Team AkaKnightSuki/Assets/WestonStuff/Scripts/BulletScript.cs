@@ -7,6 +7,9 @@ public class BulletScript : MonoBehaviour
 
     public float speed = 20f;
     public Rigidbody2D rb;
+    public int damage = 50;
+    // impactEffect currently unavaliable because of some difficulties.
+    // public GameObject impactEffect;
 
 	// Use this for initialization
 	void Start ()
@@ -14,8 +17,17 @@ public class BulletScript : MonoBehaviour
         rb.velocity = transform.right * speed;
 	}
 
+    // Code for hitting an enemy
     void OnTriggerEnter2D (Collider2D hitInfo)
     {
-        Debug.Log(hitInfo.name);
+        EnemyScript enemy = hitInfo.GetComponent<EnemyScript>();
+        if (enemy != null)
+        {
+            enemy.TakeDamage(damage);
+        }
+        // Part of the impactEffect code meaning it changes the sprite as the bullet hits something.
+        // Instantiate(impactEffect, transform.position, transform.rotation);
+
+        Destroy(gameObject);
     }
 }
