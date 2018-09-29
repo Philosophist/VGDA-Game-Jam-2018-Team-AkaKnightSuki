@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovementTest : MonoBehaviour {
+public class PlayerController : MonoBehaviour
+{
     public float horizontalSpeed = 5f;
+    public int health = 100;
     private bool facingRight;
+   
     // Use this for initialization
     void Start () {
         facingRight = true;
