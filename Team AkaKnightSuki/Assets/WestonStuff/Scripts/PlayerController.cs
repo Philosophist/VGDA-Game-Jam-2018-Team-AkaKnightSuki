@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public int health = 100;
     private bool facingRight;
     private Rigidbody2D rb2d;
-    private float torqScaler = 0.025f;
+    public float torqScaler = 0.025f;
     private bool bothDirectionsInUse = false;
 
     // Use this for initialization
@@ -22,6 +22,9 @@ public class PlayerController : MonoBehaviour
     {
         float moveHorizontal = Input.GetAxisRaw("Horizontal");
         float moveVertical = Input.GetAxisRaw("Vertical");
+        //Vector2 movement = new Vector2(moveHorizontal, moveVertical);
+        //rb2d.AddForce(movement);
+
         Vector2 verticalDrift = new Vector2(transform.up.x,transform.up.y);
         Vector2 downThrust = new Vector2(-transform.up.x, -transform.up.y);
         rb2d.AddTorque (moveHorizontal * torqScaler);

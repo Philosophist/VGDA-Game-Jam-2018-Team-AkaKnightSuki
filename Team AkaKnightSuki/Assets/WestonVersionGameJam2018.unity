@@ -964,7 +964,7 @@ Prefab:
     - target: {fileID: 50630961985141606, guid: 33d7accbccecbae4f88c03cfbdf9338b,
         type: 2}
       propertyPath: m_AngularDrag
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114891039404312588, guid: 33d7accbccecbae4f88c03cfbdf9338b,
         type: 2}
@@ -999,6 +999,11 @@ Prefab:
     - target: {fileID: 1231613630564100, guid: 33d7accbccecbae4f88c03cfbdf9338b, type: 2}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114401148819531132, guid: 33d7accbccecbae4f88c03cfbdf9338b,
+        type: 2}
+      propertyPath: torqScaler
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33d7accbccecbae4f88c03cfbdf9338b, type: 2}
