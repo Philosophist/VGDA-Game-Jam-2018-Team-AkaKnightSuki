@@ -9,6 +9,14 @@ public class EnemyScript : MonoBehaviour
         private bool skipMove;                              //Boolean to determine whether or not enemy should skip a turn or move this turn.
     public AudioClip MusicClip;
     public AudioSource MusicSource;
+
+    //Sets the speed of the enemy.
+    public float speed;
+    //Sets target to follow
+    public Transform target;
+    //Sets how close to player in order to follow.
+    public float chaseRange;
+
     // Sets the hp to 100 and can be changed in inspector.
     public int health = 100;
 
@@ -41,6 +49,16 @@ public class EnemyScript : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-		
+        //Chasing player A.I. (Not working currently)
+        //float distanceToTarget = Vector3.Distance(transform.position, target.position); 
+       // if(distanceToTarget < chaseRange)
+        {
+           // Vector3 targetDir = target.position - transform.position;
+           // float angle = Mathf.Atan2 (targetDir.y, targetDir.x)* Mathf.Rad2Deg - 90f;
+           // Quaternion q = Quaternion.AngleAxis (angle, Vector3.forward);
+           // transform.rotation = Quaternion.RotateTowards(transform.rotation, q, 180);
+
+           // transform.Translate(Vector3.up * Time.deltaTime * speed);
+        }
 	}
 }
