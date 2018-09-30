@@ -6,9 +6,15 @@ public class Shooting : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject bulletPrefab;
+    public AudioClip MusicClip;
+    public AudioSource MusicSource;
 
-	// Update is called once per frame
-	void Update ()
+    void Start()
+    {
+        MusicSource.clip = MusicClip;
+    }
+    // Update is called once per frame
+    void Update ()
     {
 		if (Input.GetButtonDown("Fire1"))
         {
@@ -20,5 +26,7 @@ public class Shooting : MonoBehaviour
     {
         // shooting logic
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+
+        MusicSource.Play();
     }
 }
